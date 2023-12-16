@@ -1,9 +1,10 @@
-export interface Options {
-  repeat?: number;
-}
+import { Template } from 'init-roll';
+import { join } from 'path';
+import { migration20231216 } from './migrations/20231216';
 
-export function action(word: string, { repeat = 1 }: Options) {
-  for (let i = 0; i < Number(repeat); i++) {
-    console.log(word);
-  }
+export async function createInitRoll(project: string | null) {
+  const projectFullPath = project ? join(process.cwd(), project) : process.cwd();
+
+  const template = new Template(projectFullPath, 'create-init-roll', 'create-init-roll');
+  template.addMigration(migration20231216);
 }

@@ -1,6 +1,6 @@
 {
   "name": "create-init-roll",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create create-xxx or @xxx/create-xxx packages",
   "keywords": [
     "node",
